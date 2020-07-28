@@ -1,0 +1,8 @@
+name: ThePunch
+version: 1.0
+author: Karamouche
+main: fr.karamouche.thepunch.Main
+commands:
+  forcestart:
+    description: start the game
+    permission: punch.start
