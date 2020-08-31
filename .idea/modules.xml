@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../BowSwap/BowSwap.iml" filepath="$PROJECT_DIR$/../BowSwap/BowSwap.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../DiamondLimit/DiamondLimit.iml" filepath="$PROJECT_DIR$/../DiamondLimit/DiamondLimit.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../PlantTheBomb V2/PlantTheBomb V2.iml" filepath="$PROJECT_DIR$/../PlantTheBomb V2/PlantTheBomb V2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ThePunch.iml" filepath="$PROJECT_DIR$/ThePunch.iml" />
+    </modules>
+  </component>
+</project>

@@ -24,7 +24,7 @@ public class Game {
 	private Map<Player, Puncher> punchers;
 	private final String tag;
 	private final Location gameSpawn;
-	private final int maxPlayer = 3;
+	private final int maxPlayer = 8;
 	private final Main myPlugin;
 	
 	//CONSTRUCTEUR

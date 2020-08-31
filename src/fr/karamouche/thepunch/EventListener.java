@@ -48,7 +48,7 @@ public class EventListener implements Listener {
 	public void onLogin(AsyncPlayerPreLoginEvent event) {
 		Game game = myPlugin.getCurrentGame();
 		if(game.getStatut().equals(Statut.STARTING)) {
-			event.setKickMessage(game.getTag()+"La partie est complète !");
+			event.setKickMessage(game.getTag()+"La partie est complï¿½te !");
 			event.setLoginResult(Result.KICK_OTHER);
 		}
 	}
@@ -90,7 +90,7 @@ public class EventListener implements Listener {
                 myPlugin.getGamesApi().setState(Bukkit.getServerName(), 0);
             }
             */
-			event.setJoinMessage(myPlugin.getCurrentGame().getTag()+ChatColor.YELLOW+event.getPlayer().getName()+ChatColor.GRAY+" a rejoint la partie "+"§8(§a"+myPlugin.getCurrentGame().getNbPlayers()+"§8/§a"+myPlugin.getCurrentGame().getMaxPlayer()+"§8)");
+			event.setJoinMessage(myPlugin.getCurrentGame().getTag()+ChatColor.YELLOW+event.getPlayer().getName()+ChatColor.GRAY+" a rejoint la partie "+"Â§8(Â§a"+myPlugin.getCurrentGame().getNbPlayers()+"Â§8/Â§a"+myPlugin.getCurrentGame().getMaxPlayer()+"Â§8)");
 			if(myPlugin.getCurrentGame().getNbPlayers() == myPlugin.getCurrentGame().getMaxPlayer()) {
 				myPlugin.getCurrentGame().start();
 			}
@@ -112,17 +112,17 @@ public class EventListener implements Listener {
         
         ItemStack compass = new ItemStack(Material.COMPASS);
         ItemMeta cM = compass.getItemMeta();
-        cM.setDisplayName("§aListe des joueurs");
+        cM.setDisplayName("ï¿½aListe des joueurs");
         compass.setItemMeta(cM);
 
         ItemStack netherstar = new ItemStack(Material.NETHER_STAR);
         ItemMeta nM = netherstar.getItemMeta();
-        nM.setDisplayName("§aRejoindre une nouvelle game");
+        nM.setDisplayName("ï¿½aRejoindre une nouvelle game");
         netherstar.setItemMeta(nM);
         
         ItemStack bed = new ItemStack(Material.BED);
         ItemMeta bM = bed.getItemMeta();
-        bM.setDisplayName("§6Retour au hub");
+        bM.setDisplayName("ï¿½6Retour au hub");
         bed.setItemMeta(bM);
         
         Bukkit.getPlayer(playerUUID).getInventory().clear();
@@ -147,7 +147,7 @@ public class EventListener implements Listener {
 			event.setQuitMessage("");
 		}
 		else {
-			event.setQuitMessage(myPlugin.getCurrentGame().getTag()+ChatColor.YELLOW+event.getPlayer().getName()+ChatColor.GRAY+" a quitté la partie "+ChatColor.YELLOW+"["+(myPlugin.getCurrentGame().getNbPlayers()-1)+"/"+myPlugin.getCurrentGame().getMaxPlayer()+"]");
+			event.setQuitMessage(myPlugin.getCurrentGame().getTag()+ChatColor.YELLOW+event.getPlayer().getName()+ChatColor.GRAY+" a quittÃ© la partie "+ChatColor.YELLOW+"["+(myPlugin.getCurrentGame().getNbPlayers()-1)+"/"+myPlugin.getCurrentGame().getMaxPlayer()+"]");
 			/*if(myPlugin.getPlayersManager().getPlayers().size() == 0) {
                 myPlugin.getGamesApi().deleteGame(Bukkit.getServerName());
             }*/
@@ -168,6 +168,7 @@ public class EventListener implements Listener {
 	@EventHandler
 	public void onMove(PlayerMoveEvent event) {
 		final double Y = event.getTo().getY();
+		//ICI LA COUCHE DE CHUTE
 		if(Y <= 140 && myPlugin.getCurrentGame().getStatut().equals(Statut.START)) {
 			final Player player = event.getPlayer();
 			if(myPlugin.getCurrentGame().getPunchers().containsKey(player)) {
@@ -213,7 +214,7 @@ public class EventListener implements Listener {
 			if(event.getEntity() instanceof Player && killer != null && !onCooldownPlayer.contains(killer)) {
 				event.setDamage(0);
 				onCooldownPlayer.add(killer);
-				System.out.println(killer.getName()+" a donné un coup");
+				System.out.println(killer.getName()+" a donnï¿½ un coup");
 				Player theKiller = killer;
 				Player victim = (Player)event.getEntity();
 				if(!killer.equals(victim)) {

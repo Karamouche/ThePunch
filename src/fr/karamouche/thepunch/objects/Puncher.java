@@ -103,13 +103,13 @@ public class Puncher {
 			Firework firework = this.getPlayer().getWorld().spawn(player.getLocation(), Firework.class);
 			FireworkMeta data = firework.getFireworkMeta();
 			switch (tag) {
-			case "§a":
+			case "Â§a":
 				data.addEffects(FireworkEffect.builder().withColor(Color.LIME).with(Type.BALL_LARGE).withFlicker().build());
 				break;
-			case "§e":
+			case "Â§e":
 				data.addEffects(FireworkEffect.builder().withColor(Color.YELLOW).with(Type.BALL_LARGE).withFlicker().build());
 				break;
-			case "§6":
+			case "Â§6":
 				data.addEffects(FireworkEffect.builder().withColor(Color.ORANGE).with(Type.BALL_LARGE).withFlicker().build());
 				break;
 			default:
@@ -119,7 +119,7 @@ public class Puncher {
 			data.setPower(2);
 			firework.setFireworkMeta(data);
 			if(killer != null) {
-				Bukkit.getServer().broadcastMessage(myPlugin.getCurrentGame().getTag()+this.getColor().getTag()+this.getPlayer().getName()+ChatColor.GRAY+" a été tué par "+killer.getColor().getTag()+killer.getPlayer().getName());
+				Bukkit.getServer().broadcastMessage(myPlugin.getCurrentGame().getTag()+this.getColor().getTag()+this.getPlayer().getName()+ChatColor.GRAY+" a ï¿½tï¿½ tuï¿½ par "+killer.getColor().getTag()+killer.getPlayer().getName());
 			}
 			else
 				Bukkit.getServer().broadcastMessage(myPlugin.getCurrentGame().getTag()+this.getColor().getTag()+this.getPlayer().getName()+ChatColor.GRAY+" est mort");
@@ -133,7 +133,7 @@ public class Puncher {
 	public void endGame() {
 		setSpec(this.getPlayer());
 		myPlugin.getCurrentGame().getPunchers().remove(this.getPlayer());
-		Bukkit.getServer().broadcastMessage(myPlugin.getCurrentGame().getTag()+this.getColor().getTag()+this.getPlayer().getName()+ChatColor.GRAY+" est éliminé !");
+		Bukkit.getServer().broadcastMessage(myPlugin.getCurrentGame().getTag()+this.getColor().getTag()+this.getPlayer().getName()+ChatColor.GRAY+" est ï¿½liminï¿½ !");
 		if(myPlugin.getCurrentGame().getNbPlayers() == 1) {
 			Player fPlayer = null;
 			for(Player player : Bukkit.getOnlinePlayers())
@@ -157,17 +157,17 @@ public class Puncher {
         
         ItemStack compass = new ItemStack(Material.COMPASS);
         ItemMeta cM = compass.getItemMeta();
-        cM.setDisplayName("§aListe des joueurs");
+        cM.setDisplayName("ï¿½aListe des joueurs");
         compass.setItemMeta(cM);
 
         ItemStack netherstar = new ItemStack(Material.NETHER_STAR);
         ItemMeta nM = netherstar.getItemMeta();
-        nM.setDisplayName("§aRejoindre une nouvelle game");
+        nM.setDisplayName("ï¿½aRejoindre une nouvelle game");
         netherstar.setItemMeta(nM);
         
         ItemStack bed = new ItemStack(Material.BED);
         ItemMeta bM = bed.getItemMeta();
-        bM.setDisplayName("§6Retour au hub");
+        bM.setDisplayName("ï¿½6Retour au hub");
         bed.setItemMeta(bM);
         
         Bukkit.getPlayer(playerUUID).getInventory().clear();
